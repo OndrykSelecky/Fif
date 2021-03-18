@@ -21,8 +21,8 @@ namespace Fif {
 				}
 			);
 			chrome.contextMenus.create({
-				targetUrlPatterns: ['*://sbatfs06/2Ring/!ProductBacklog-Blue/Blue/_backlogs/Taskboard*', '*://sbatfs06/2Ring/!ProductBacklog-Blue/Green/_backlogs/Taskboard*'],
-				documentUrlPatterns: ['*://sbatfs06/2Ring/!ProductBacklog-Blue/Blue/_backlogs/Taskboard*', '*://sbatfs06/2Ring/!ProductBacklog-Blue/Green/_backlogs/Taskboard*'],
+				targetUrlPatterns: ['*://devops.2ring.com/2Ring/!ProductBacklog-Blue/_sprints/taskboard*' ],
+				documentUrlPatterns: ['*://devops.2ring.com/2Ring/!ProductBacklog-Blue/_sprints/taskboard*' ],
 				type: 'normal',
 				onclick: (data) => {
 					chrome.tabs.query({ url: data.pageUrl },
@@ -41,8 +41,8 @@ namespace Fif {
 				title: "Remove DONE"
 			});
 			chrome.contextMenus.create({
-				targetUrlPatterns: ['*://sbatfs06/2Ring/!ProductBacklog-Blue/Blue/_backlogs/Taskboard*', '*://sbatfs06/2Ring/!ProductBacklog-Blue/Green/_backlogs/Taskboard*'],
-				documentUrlPatterns: ['*://sbatfs06/2Ring/!ProductBacklog-Blue/Blue/_backlogs/Taskboard*', '*://sbatfs06/2Ring/!ProductBacklog-Blue/Green/_backlogs/Taskboard*'],
+				targetUrlPatterns: ['*://devops.2ring.com/2Ring/!ProductBacklog-Blue/_sprints/taskboard*' ],
+				documentUrlPatterns: ['*://devops.2ring.com/2Ring/!ProductBacklog-Blue/_sprints/taskboard*' ],
 				type: 'normal',
 				onclick: (data) => {
 					chrome.tabs.query({ url: data.pageUrl },
@@ -61,7 +61,7 @@ namespace Fif {
 				title: "Show DONE"
 			});
 
-			chrome.tabs.query({ url: ['*://sbatfs06/2Ring/!ProductBacklog-Blue/Blue/_backlogs/Taskboard*', '*://sbatfs06/2Ring/!ProductBacklog-Blue/Green/_backlogs/Taskboard*'] },
+			chrome.tabs.query({ url: ['*://devops.2ring.com/2Ring/!ProductBacklog-Blue/_sprints/taskboard*' ] },
 				(tabs) => {
 					tabs.forEach((tab) => {
 						chrome.tabs.executeScript(tab.id, { file: 'content_scripts/removeDoneColumn.js' });
@@ -102,7 +102,7 @@ namespace Fif {
 				});
 			}
 
-			if(tab.url && tab.url.startsWith('https://sbatfs06/2Ring')) {
+			if(tab.url && tab.url.startsWith('https://devops.2ring')) {
 				chrome.tabs.executeScript(tab.id, { file: 'content_scripts/removeDoneColumn.js' });
 			}
 		}

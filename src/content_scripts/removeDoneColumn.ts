@@ -34,7 +34,7 @@ namespace Fif {
                     template.className = "ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only";
                     template.style.cssFloat = 'left';
                     template.onclick = () => {
-                       const storyName = createBranchDialog[0].querySelector('.vc-create-branch-dialog .filtered-list-dropdown-menu.vc-git-selector-menu-right .selected-item-text');
+                       const storyName = createBranchDialog[0].querySelector('.vc-git-version-selector .filtered-list-dropdown-menu .selected-item-text');
                        const taskName = createBranchDialog[0].querySelector('.la-primary-data a');
                        const destinationInput = createBranchDialog[0].querySelector('.bowtie-style input[type=text]');
 
